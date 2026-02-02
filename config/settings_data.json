@@ -1,0 +1,13 @@
+{
+    "current": "Default",
+    "presets": {
+        "Default": {
+            "sections": {
+                "main": {
+                    "type": "main-product",
+                    "settings": {}
+                }
+            }
+        }
+    }
+}

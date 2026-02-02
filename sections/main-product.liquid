@@ -1,0 +1,224 @@
+{% comment %}
+  Main Product Section for Roots Beard Oil - Premium Implementation
+{% endcomment %}
+
+{{ 'custom-product.css' | asset_url | stylesheet_tag }}
+
+<div class="product-page-container" data-section-id="{{ section.id }}">
+  <!-- Breadcrumbs & Badge Row -->
+  <div class="breadcrumb-row">
+    <div class="breadcrumb-list">
+      <span>Home</span> <span class="sep">></span> <span>All products</span> <span class="sep">></span> <span class="active">Roots Beard Oil</span>
+    </div>
+  </div>
+
+  <div class="product-grid">
+    <!-- Left Column: Image Gallery -->
+    <div class="product-gallery">
+      <div class="thumbnail-column">
+        {% for image in product.images limit:4 %}
+          <div class="thumbnail-item {% if forloop.first %}active{% endif %}" 
+               data-image-index="{{ forloop.index0 }}"
+               data-src="{{ image | img_url: '600x600', crop: 'center' }}"
+               {% if forloop.first %}data-style="reduced"{% endif %}>
+            <img src="{{ image | img_url: '200x200', crop: 'center' }}" alt="{{ image.alt }}" width="200" height="200">
+          </div>
+          {% if forloop.first %}
+            <div class="thumbnail-item" 
+                 data-image-index="custom-1"
+                 data-src="{{ 'key-benefits.png' | asset_url }}"
+                 data-style="reduced">
+              <img src="{{ 'key-benefits.png' | asset_url }}" alt="Key Benefits" width="200" height="200">
+            </div>
+          {% endif %}
+        {% endfor %}
+        <div class="thumbnail-arrow-down">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </div>
+
+      <div class="main-image-container">
+        <img id="MainProductImage" src="{{ 'product-gallery.png' | asset_url }}" alt="{{ product.title }}" width="600" height="600">
+      </div>
+    </div>
+
+    <!-- Right Column: Product Details -->
+    <div class="product-details">
+      <div class="product-header">
+        <h1 class="product-title serif-italic">ROOTS BEARD OIL - 100ML</h1>
+        <div class="product-meta">
+          <div class="stars">★★★★★</div>
+          <span class="review-links">450 reviews</span>
+          <span class="review-links" style="color: #9ca3af; text-decoration: none;">Read Reviews</span>
+        </div>
+      </div>
+
+      <p class="product-description">
+        Moisturizing Beard Oil deeply hydrates facial hair & the skin beneath reducing dryness, itchiness & flakiness.
+      </p>
+
+      <h3 class="why-it-works-title serif-italic">WHY IT WORKS:</h3>
+
+      <div class="tabs-card">
+         <div class="tab-headers screenshot-tabs">
+            <button class="tab-btn inactive" data-tab="ingredients">Key Ingredients</button>
+            <button class="tab-btn active" data-tab="benefits">Product Benefits</button>
+          </div>
+          <div class="tab-content" id="TabContent">
+             <div id="IngredientsContent" class="tab-pane" style="display:none">
+                 <div class="benefit-item">
+                    <div class="benefit-check">✓</div>
+                    <div class="benefit-text-group">
+                       <span class="benefit-desc"><strong>Key Ingredient:</strong> Description of the key ingredient.</span>
+                    </div>
+                 </div>
+             </div>
+             <div id="BenefitsContent" class="tab-pane active">
+                <div class="benefit-item">
+                   <div class="benefit-check">✓</div>
+                   <div class="benefit-text-group">
+                      <span class="benefit-desc"><strong>Deep Hydration:</strong> Locks in moisture to prevent dryness, flakiness, and beard dandruff.</span>
+                   </div>
+                </div>
+                <div class="benefit-item">
+                   <div class="benefit-check">✓</div>
+                   <div class="benefit-text-group">
+                      <span class="benefit-desc"><strong>Nourishing & Strengthening:</strong> Packed with vitamins and essential fatty acids to support healthier, stronger beard growth.</span>
+                   </div>
+                </div>
+                <div class="benefit-item">
+                   <div class="benefit-check">✓</div>
+                   <div class="benefit-text-group">
+                      <span class="benefit-desc"><strong>Natural Origins:</strong> Handcrafted with premium oils and natural extracts for a clean, non-greasy finish.</span>
+                   </div>
+                </div>
+                <div class="benefit-item">
+                   <div class="benefit-check">✓</div>
+                   <div class="benefit-text-group">
+                      <span class="benefit-desc"><strong>Tailored Scents:</strong> Choose from 3 100% pure essential oil blends - no synthetic fragrances, ever.</span>
+                   </div>
+                </div>
+             </div>
+          </div>
+      </div>
+
+      <!-- Multi-Step Purchase Component -->
+      <div class="purchase-section">
+        <div class="step-indicator screenshot-steps">
+           <div class="indicator-item active" id="Step1Indicator">
+              <span class="indicator-circle">1</span> Choose Packages <span class="sep">></span>
+           </div>
+           <div class="indicator-item" id="Step2Indicator">
+              <span class="indicator-circle">2</span> Choose Scent
+           </div>
+        </div>
+
+        <div class="toggle-container">
+           <button class="toggle-btn active" id="BtnSub">Subscribe & Save</button>
+           <button class="toggle-btn" id="BtnOne">One Time Purchase</button>
+        </div>
+
+        <!-- Subscription View -->
+        <div id="SubscriptionOptions" class="subscription-panel">
+            <div class="panel-badges">
+                <div class="badge-group">
+                    <div class="mini-badge"><span style="color:var(--accent)">✓</span> Up to 30% off</div>
+                    <div class="mini-badge">🚚 Free Shipping <span class="serif-italic" style="color:var(--accent); font-size: 8px;">For Life</span></div>
+                </div>
+                <div class="price-display">
+                    <div class="price-old">£30.99</div>
+                    <div class="price-new">£26.34</div>
+                </div>
+            </div>
+
+            <div class="package-list" id="PackageListSub">
+                <!-- Injected via JS -->
+            </div>
+
+            <div class="frequency-section">
+               <h4 class="freq-title">Select Delivery Frequency</h4>
+               <div class="freq-btns">
+                  <button class="freq-btn" data-freq="1">1 Month</button>
+                  <button class="freq-btn active" data-freq="2">
+                    <span class="freq-recomm">Most Recommended</span>
+                    2 Months
+                  </button>
+                  <button class="freq-btn" data-freq="3">3 Months</button>
+               </div>
+            </div>
+
+            <div class="congrats-banner" id="CongratsBanner">
+               🎉 CONGRATS, YOU'RE SAVING <span id="CongratsPct">15%</span>
+            </div>
+
+            <button class="btn-primary" id="BtnNextStep">
+                NEXT STEP <span class="arrow-icon">></span>
+            </button>
+
+            <!-- Payment Icons -->
+            <div class="payment-methods">
+               <div class="payment-icon">VISA</div>
+               <div class="payment-icon">MASTERCARD</div>
+               <div class="payment-icon">AMEX</div>
+               <div class="payment-icon">PAYPAL</div>
+               <div class="payment-icon">GOOGLEPAY</div>
+               <div class="payment-icon">APPLEPAY</div>
+            </div>
+
+            <div class="secure-notice">
+               🔒 All transactions secured and encrypted
+            </div>
+        </div>
+
+        <!-- Scent Selection (Step 2) -->
+        <div id="ScentOptions" class="subscription-panel" style="display:none">
+            <div class="package-list" id="ScentList">
+                <!-- Injected via JS -->
+            </div>
+            <button class="btn-primary" id="BtnAddToCart">
+                Add to Cart ✓
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cart Drawer -->
+<div class="cart-overlay" style="display:none">
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h2 class="serif-italic" style="font-size: 24px;">Your Cart (<span id="CartCount">0</span>)</h2>
+            <button id="CloseCart" style="background:none; border:none; font-size: 24px; cursor:pointer">×</button>
+        </div>
+        <div class="cart-items" id="CartItems">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="subtotal-row" style="display:flex; justify-content:space-between; font-weight:900; font-size: 18px;">
+                <span>Total Due</span>
+                <span id="CartTotal">£0.00</span>
+            </div>
+            <button class="btn-primary" id="BtnCheckout">Checkout Now</button>
+        </div>
+    </div>
+</div>
+
+<!-- Order Success Overlay -->
+<div class="success-overlay" id="SuccessOverlay" style="display:none">
+    <div class="success-card">
+        <div class="success-icon">✓</div>
+        <h2 class="serif-italic">Order Placed!</h2>
+        <p>Thank you for your purchase from RUGGEDBEARD.</p>
+        <button class="btn-primary" id="BtnCloseSuccess">Continue Shopping</button>
+    </div>
+</div>
+
+<script src="{{ 'custom-product.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Main Product",
+  "settings": []
+}
+{% endschema %}

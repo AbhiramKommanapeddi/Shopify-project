@@ -1,0 +1,80 @@
+╭─ info ───────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  :\Users\abhik\Downloads\Shopify test                                        │
+│  assignment\shopify\sections\features.liquid                                 │
+│                                                                              │
+│                                                                              │
+│  [error]: ImgWidthAndHeight                                                  │
+│  Missing width and height attributes on img tag                              │
+│                                                                              │
+│  5  <img src="{{ 'brand-logos.png' | asset_url }}" alt="Featured In"         │
+│  class="brand-image">                                                        │
+│                                                                              │
+│                                                                              │
+│  [error]: ImgWidthAndHeight                                                  │
+│  Missing width and height attributes on img tag                              │
+│                                                                              │
+│  48  <img src="{{ 'product-lineup.png' | asset_url }}" alt="Roots Beard Oil  │
+│   Lineup" class="usps-image">                                                │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─ info ───────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  :\Users\abhik\Downloads\Shopify test                                        │
+│  assignment\shopify\sections\footer.liquid                                   │
+│                                                                              │
+│                                                                              │
+│  [error]: ImgWidthAndHeight                                                  │
+│  Missing width and height attributes on img tag                              │
+│                                                                              │
+│  49  <img src="{{ 'social-icons.png' | asset_url }}" alt="Social Media"      │
+│  class="social-img">                                                         │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─ info ───────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  :\Users\abhik\Downloads\Shopify test                                        │
+│  assignment\shopify\sections\main-product.liquid                             │
+│                                                                              │
+│                                                                              │
+│  [error]: ImgWidthAndHeight                                                  │
+│  Missing width and height attributes on img tag                              │
+│                                                                              │
+│  22  <img src="{{ image | img_url: '200x200', crop: 'center' }}" alt="{{     │
+│  image.alt }}">                                                              │
+│                                                                              │
+│                                                                              │
+│  [error]: ImgWidthAndHeight                                                  │
+│  Missing width and height attributes on img tag                              │
+│                                                                              │
+│  28  <img id="MainProductImage" src="{{ 'product-gallery.png' | asset_url    │
+│  }}" alt="{{ product.title }}">                                              │
+│                                                                              │
+│                                                                              │
+│  [error]: ParserBlockingScript                                               │
+│  The script_tag filter is parser-blocking. Use a <script> tag with async or  │
+│   defer for better performance                                               │
+│                                                                              │
+│  185  {{ 'custom-product.js' | asset_url | script_tag }}                     │
+│                                                                              │
+│                                                                              │
+│  [warning]: DeprecatedFilter                                                 │
+│  Deprecated filter 'img_url', consider using 'image_url'.                    │
+│                                                                              │
+│  22  <img src="{{ image | img_url: '200x200', crop: 'center' }}" alt="{{     │
+│  image.alt }}">                                                              │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─ info ───────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  Theme Check Summary.                                                        │
+│                                                                              │
+│  9 files inspected with 7 total offenses found across 3 files.               │
+│  6 errors.                                                                   │
+│  1 warnings.                                                                 │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+

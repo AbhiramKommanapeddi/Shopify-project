@@ -1,0 +1,23 @@
+╭─ info ───────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  :\Users\abhik\Downloads\Shopify test                                        │
+│  assignment\shopify\sections\main-product.liquid                             │
+│                                                                              │
+│                                                                              │
+│  [warning]: DeprecatedFilter                                                 │
+│  Deprecated filter 'img_url', consider using 'image_url'.                    │
+│                                                                              │
+│  22  <img src="{{ image | img_url: '200x200', crop: 'center' }}" alt="{{     │
+│  image.alt }}" width="200" height="200">                                     │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─ info ───────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  Theme Check Summary.                                                        │
+│                                                                              │
+│  9 files inspected with 1 total offenses found across 1 files.               │
+│  1 warnings.                                                                 │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+

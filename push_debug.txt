@@ -1,0 +1,170 @@
+2026-02-02T04:41:04.011Z: Running command theme push
+2026-02-02T04:41:04.047Z: Running system process:
+  · Command: C:\Program Files\nodejs\node.exe C:\Users\abhik\AppData\Local\npm-cache\_npx\5db5ab0f66a0c433\node_modules\shopify\bin\run.js notifications list --ignore-errors
+  · Working directory: C:/Users/abhik/Downloads/Shopify test assignment/shopify
+
+2026-02-02T04:41:04.082Z: Notifications to show: 0
+2026-02-02T04:41:04.115Z: Ensuring that the user is authenticated with the Theme API with the following scopes:
+[]
+
+2026-02-02T04:41:04.116Z: Ensuring that the user is authenticated with the Admin API with the following scopes for the store abhikommanapeddi.myshopify.com:
+[]
+
+2026-02-02T04:41:04.119Z: Getting session store...
+2026-02-02T04:41:04.123Z: Getting current session ID...
+2026-02-02T04:41:04.125Z: Validating existing session against the scopes:
+[
+  "openid",
+  "https://api.shopify.com/auth/shop.admin.graphql",
+  "https://api.shopify.com/auth/shop.admin.themes",
+  "https://api.shopify.com/auth/partners.collaborator-relationships.readonly",
+  "https://api.shopify.com/auth/shop.storefront-renderer.devtools",
+  "https://api.shopify.com/auth/partners.app.cli.access",
+  "https://api.shopify.com/auth/destinations.readonly",
+  "https://api.shopify.com/auth/organization.store-management",
+  "https://api.shopify.com/auth/organization.on-demand-user-access",
+  "https://api.shopify.com/auth/organization.apps.manage"
+]
+For applications:
+{
+  "adminApi": {
+    "scopes": [],
+    "storeFqdn": "abhikommanapeddi.myshopify.com"
+  }
+}
+
+2026-02-02T04:41:04.126Z: - Token validation -> It's expired: false
+2026-02-02T04:41:04.159Z: Sending "Admin" GraphQL request:
+  query publicApiVersions {
+  publicApiVersions {
+    handle
+    supported
+    __typename
+  }
+}
+
+With variables:
+{}
+
+With request headers:
+ - User-Agent: Shopify CLI; v=3.90.0
+ - Keep-Alive: timeout=30
+ - Sec-CH-UA-PLATFORM: win32
+ - Content-Type: application/json
+
+to https://abhikommanapeddi.myshopify.com/admin/api/unstable/graphql.json
+2026-02-02T04:41:04.736Z: Request to https://abhikommanapeddi.myshopify.com/admin/api/unstable/graphql.json completed in 575 ms
+With response headers:
+ - content-type: application/json; charset=utf-8
+ - server-timing: processing;dur=61, verdict_flag_enabled;desc="count=10";dur=0.647, graphql;desc="admin/query/other", _y;desc="5fcf2493-a914-4ef7-b831-0d0c5bebf251", _s;desc="06d78f56-1954-4629-b8cb-99b7610e1240", cfRequestDuration;dur=426.000118
+ - x-request-id: 7c8754d0-c15d-427c-b051-15b507430d04-1770007267
+    
+2026-02-02T04:41:04.738Z: Sending "Admin" GraphQL request:
+  query getThemes($after: String) {
+  themes(first: 50, after: $after) {
+    nodes {
+      id
+      name
+      role
+      processing
+      __typename
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+      __typename
+    }
+    __typename
+  }
+}
+
+With variables:
+{
+  "after": null
+}
+
+With request headers:
+ - User-Agent: Shopify CLI; v=3.90.0
+ - Keep-Alive: timeout=30
+ - Sec-CH-UA-PLATFORM: win32
+ - Content-Type: application/json
+
+to https://abhikommanapeddi.myshopify.com/admin/api/2026-01/graphql.json
+2026-02-02T04:41:05.225Z: Request to https://abhikommanapeddi.myshopify.com/admin/api/2026-01/graphql.json completed in 486 ms
+With response headers:
+ - content-type: application/json; charset=utf-8
+ - server-timing: processing;dur=59, verdict_flag_enabled;desc="count=11";dur=0.64, graphql;desc="admin/query/other", _y;desc="44e170bc-927d-4590-b2ff-1394562980f2", _s;desc="0a1d1daa-e24d-46fa-b4d7-8bf7d6446472", cfRequestDuration;dur=399.000168
+ - x-request-id: 79244446-670a-4994-a90a-2f1f33123045-1770007268
+    
+╭─ error ──────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  No themes on the store abhikommanapeddi.myshopify.com match the ID or name  │
+│   "1431987159"                                                               │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2026-02-02T04:41:05.513Z: Running system process:
+  · Command: npm prefix
+  · Working directory: C:/Users/abhik/Downloads/Shopify test assignment/shopify
+
+2026-02-02T04:41:06.803Z: Obtaining the dependency manager in directory .....
+2026-02-02T04:41:08.451Z: Request to https://monorail-edge.shopifysvc.com/v1/produce completed in 508 ms
+With response headers:
+ - x-request-id: 4ccf4dd5-2503-4d72-a7c7-5ff54cb132cd
+    
+2026-02-02T04:41:08.452Z: Analytics event sent: {
+  "command": "theme push",
+  "time_start": 1770007264014,
+  "time_end": 1770007265326,
+  "total_time": 1312,
+  "success": false,
+  "cli_version": "3.90.0",
+  "ruby_version": "",
+  "node_version": "22.12.0",
+  "is_employee": false,
+  "uname": "windows amd64",
+  "env_ci": false,
+  "env_plugin_installed_any_custom": true,
+  "env_plugin_installed_shopify": "[]",
+  "env_shell": "cmd.exe",
+  "env_device_id": "f9b22c1fe793c7d6eb33df482b2e42a8f5179a62",
+  "env_cloud": "localhost",
+  "env_package_manager": "npm",
+  "env_is_global": true,
+  "env_auth_method": "device_auth",
+  "env_is_wsl": false,
+  "env_build_repository": "Shopify/cli",
+  "cmd_all_timing_network_ms": 1062,
+  "cmd_all_timing_prompts_ms": 0,
+  "cmd_all_launcher": "npm",
+  "cmd_all_topic": "theme",
+  "cmd_all_plugin": "@shopify/theme",
+  "cmd_all_force": false,
+  "cmd_all_verbose": true,
+  "cmd_all_path_override": true,
+  "cmd_all_path_override_hash": "75f5974f5f34667f347b75ae55c97b653b45ebfa",
+  "cmd_all_last_graphql_request_id": "79244446-670a-4994-a90a-2f1f33123045-1770007268",
+  "store_fqdn_hash": "5eb94fd4e01db5f494a7a00d4836f5e74edc8d0c",
+  "cmd_theme_timings": "[]",
+  "cmd_theme_errors": "[]",
+  "cmd_theme_retries": "[]",
+  "cmd_theme_events": "[{\"name\":\"theme-command:push:single-env:authenticated\",\"timestamp\":1770007264128},{\"name\":\"timing:start:theme-command:push\",\"timestamp\":1770007264129},{\"name\":\"timing:start:theme-service:push:setup\",\"timestamp\":1770007264129},{\"name\":\"theme-api:fetch-themes\",\"timestamp\":1770007264149}]",
+  "cmd_all_timing_active_ms": 249,
+  "cmd_all_exit": "expected_error",
+  "user_id": "f822508e-e724-4655-916c-b3aa14752ef8",
+  "request_ids": [
+    "7c8754d0-c15d-427c-b051-15b507430d04-1770007267",
+    "79244446-670a-4994-a90a-2f1f33123045-1770007268"
+  ],
+  "args": "--theme 1431987159 --verbose",
+  "error_message": "No themes on the store abhikommanapeddi.myshopify.com match the ID or name \"1431987159\"",
+  "env_plugin_installed_all": "[\"shopify\"]",
+  "env_shopify_variables": "{\"SHOPIFY_FLAG_VERBOSE\":\"true\"}",
+  "metadata": "{\"store_fqdn\":\"abhikommanapeddi.myshopify.com\",\"extraPublic\":{\"shopify\":{\"cmd_app_warning_api_key_deprecation_displayed\":false}},\"extraSensitive\":{\"shopify\":{}}}"
+}
+2026-02-02T04:41:08.477Z: Reporting handled error to Bugsnag: No themes on the store abhikommanapeddi.myshopify.com match the ID or name "1431987159"
+2026-02-02T04:41:08.662Z: Running system process:
+  · Command: npm prefix
+  · Working directory: C:/Users/abhik/Downloads/Shopify test assignment/shopify
+
+2026-02-02T04:41:09.640Z: Obtaining the dependency manager in directory .....

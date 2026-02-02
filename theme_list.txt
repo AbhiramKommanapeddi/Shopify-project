@@ -1,0 +1,16 @@
+╭─ info ───────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  name                             role                    id                 │
+│  ───────────────────────────────  ──────────────────────  ──────────────     │
+│  Design Refinement Final          [live]                  #143177220179      │
+│  Horizon                          [unpublished]           #143175680083      │
+│  Rugged Beard Preview             [unpublished]           #143176171603      │
+│  Rugged Beard Complete            [unpublished]           #143176204371      │
+│  Final Work Submission            [unpublished]           #143176400979      │
+│  Design Refinement Final          [unpublished]           #143177678931      │
+│  Design Refinement Final          [unpublished]           #143177842771      │
+│  Fixed Images Preview            [unpublished]           #143198715987      │
+│  Development (f22a1d-ABHIRAM)     [development] [yours]   #143175843923      │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
